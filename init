@@ -1,0 +1,932 @@
+campaignTrail_temp.election_json = [
+    {
+        "model": "campaign_trail.election",
+        "pk": 3,
+        "fields": {
+            "year": 2012,
+            "display_year": "Empire",
+            "summary": "obama incumbency",
+            "image_url": "https://i.imgur.com/NAQ3AyL.jpeg",
+            "winning_electoral_vote_number": 270,
+            "advisor_url": "an advisor",
+            "recommended_reading": "extra",
+            "has_visits": 0,
+            "no_electoral_majority_image": "no majority",
+            "creator": "Girlie"
+        }
+    }
+]
+
+campaignTrail_temp.candidate_json = [
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 16,
+        "fields": {
+            "first_name": "Barack",
+            "last_name": "Obama",
+            "election": 3,
+            "party": "Democrat",
+            "state": "Illinois",
+            "priority": 1,
+            "description": "<p>Barack Obama enters the 2012 campaign as the incumbent, having defeated John McCain in the 2008 election. He has governed as a moderate liberal, passing a health care reform program and taking a hawkish stance on some foreign policy issues.</p><p>Obama's administration has been dogged by a severe recession and an unconvincing recovery, which he has consistently blamed on the policies of his Republican predecessor and on the obstructionism of his political opponents in Congress.</p>",
+            "color_hex": "#2121a1ff",
+            "secondary_color_hex": "#709ad0ff",
+            "is_active": 1,
+            "image_url": "https://www.jetsimon.com/public/static/images/barack-obama-2012.jpg",
+            "electoral_victory_message": "<h3>Congratulations! You have won the 2012 election.</h3><p>In spite of a hard-fought challenge from Mitt Romney, you have held on to the Presidency.</p><p>On the political front, it appears that your health care legislation that was passed in early 2010 will survive and go into effect. While the economy has not yet recovered as strongly as you hoped and promised, you will now have four more years to leave a strong legacy to your Democratic successor.</p>",
+            "electoral_loss_message": "<h3>Sorry! You have lost the 2012 election.</h3><p>In spite of your spirited defense, Mitt Romney has won the Presidency. Nearly two centuries after the ill-fated campaign of Joseph Smith, Romney will become America's first Mormon president.</p><p>On the political front, it appears that Romney will make a push for more tax cuts to revive the economy. He will also try to repeal your health care law. If your defeat was narrow enough, you may be able to attempt a comeback in 2016.</p>",
+            "no_electoral_majority_message": "<h3>Sorry! You have lost in a squeaker.</h3><p>No candidate achieved a majority of the electoral votes, marking the first time this has happened since 1824. Unfortunately for you, the majority of U.S. states have Republican controlled congressional delegations, and they will cast their votes for Mitt Romney.</p><p>Given the incredibly close nature of the election, you can probably set your sights on a political comeback in 2016, if that is what you desire.</p>",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 17,
+        "fields": {
+            "first_name": "Republican",
+            "last_name": "Party",
+            "election": 3,
+            "party": "Republican",
+            "state": "Massachusetts",
+            "priority": 2,
+            "description": "<p>Mitt Romney enters the 2012 campaign as the Republican challenger. He has a record of public service as the former Governor of Massachusetts and he also headed Bain Capital for many years. He is generally perceived as a pro-business moderate and a competent manager.</p><p>Due to Romney's evolving positions on health care and social issues over the years, some conservatives question his sincerity. His challenge is to win that faction without alienating mainstream voters.",
+            "color_hex": "#8d2e2eff",
+            "secondary_color_hex": "#c16363ff",
+            "is_active": 1,
+            "image_url": "https://www.jetsimon.com/public/static/images/mitt-romney-2012.jpg",
+            "electoral_victory_message": "<h3>Congratulations! You have won the 2012 election.</h3><p>In spite of a hard-fought campaign from Barack Obama, you have won the Presidency. Nearly two centuries after the ill-fated campaign of Joseph Smith, you will become America's first Mormon president. Your next steps are to select a cabinet and  prepare a rousing inauguration speech. On the political front, you may have the support needed to overturn Obamacare. Or you could focus on tax cuts, or other policies entirely.</p>",
+            "electoral_loss_message": "<h3>Sorry! You have lost the 2012 election.</h3><p>In spite of your best efforts, Barack Obama has been reelected to a second term as President.</p><p>On the political front, it appears that Obamacare will survive and go into effect. While the economy has not recovered as strongly as Obama hoped and promised, he will now have four more years to leave a strong legacy to his Democratic successor. No doubt the Republicans will learn from your failure and come back stronger in 2016.</p>",
+            "no_electoral_majority_message": "<h3>Wow! You have won a true nail-biter.</h3><p>No candidate achieved a majority of the electoral votes, marking the first time this has happened since 1824. Fortunately for you, the majority of U.S. states have Republican controlled congressional delegations, and they will cast their votes for you accordingly.</p><p>The important thing is that you won. Go about implementing your agenda accordingly, and pay no attention to Democrats and pundits who call for 'compromise' and 'conciliation'.</p>",
+            "description_as_running_mate": null,
+            "candidate_score": 0.8,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 36,
+        "fields": {
+            "first_name": "Right",
+            "last_name": "Opposition",
+            "election": 3,
+            "party": "Independent",
+            "state": "Texas",
+            "priority": 3,
+            "description": "<p>ALTERNATE SCENARIO</p><p>After failing to secure the Republican nomination, Ron Paul strikes out as an independent candidate. While it will be a tall order for him to win this election, he hopes to expand his political network and prove the viability of a similar candidate in 2016. His supporters, for their part, now have their biggest stage from which to educate the American public on the fiscal and constitutional issues that Ron Paul holds most dear.</p>",
+            "color_hex": "#ffff73ff",
+            "secondary_color_hex": "#e8e8a6ff",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/ron-paul-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": null,
+            "candidate_score": 0.1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 18,
+        "fields": {
+            "first_name": "Right",
+            "last_name": "Opposition",
+            "election": 3,
+            "party": "left",
+            "state": "New Mexico",
+            "priority": 3,
+            "description": "<p>While his Libertarian views make him non-competitive in 2012, Gary Johnson hopes to use the election as a springboard for his party and ideology. The success of Ron Paul in the Republican primaries suggests a potential market for Johnson's views, but he realistically will be fortunate to win more than 2% of the popular vote.</p>",
+            "color_hex": "#ffff73ff",
+            "secondary_color_hex": "#e8e8a6ff",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/gary-johnson-2012.jpg",
+            "electoral_victory_message": "<h3>It's a miracle! You have won the 2012 election.</h3> <p>Gary Johnson? Even the people who voted for you can't believe you won.</p> <p>You are the first third-party candidate to ever win the Presidency. Now go enact that Libertarian agenda!</p>",
+            "electoral_loss_message": "<h3>Sorry! You have lost the 2012 election.</h3> <p>But what did you expect? Your main goal was to get the Libertarian agenda out there and hope for a miracle.  The miracle never came.</p>",
+            "no_electoral_majority_message": "<h3>Sorry! You have lost the 2012 election.</h3> <p>No candidate achieved a majority of the electoral votes, marking the first time this has happened since 1824. However, this  was entirely irrelevant to your chances as a third-party candidate.</p> <p>Better luck next time.</p>",
+            "description_as_running_mate": "<p>After his own failed run for the Republican nomination, Gary Johnson has the inside track on the Libertarian nomination. He also has proven experience as New Mexico's Governor.</p><p>By selecting Johnson, Ron Paul could avoid the splintering of his support to the Libertarian Party. He could also make an appeal to the socially liberal segment of the small government movement, insofar as Johnson is known to be pro-choice and independent of the religious right.</p>",
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 19,
+        "fields": {
+            "first_name": "Left Opposition",
+            "last_name": "Left Opposition",
+            "election": 3,
+            "party": "Green",
+            "state": "Massachusetts",
+            "priority": 4,
+            "description": "<p>Stein will most likely feature as a footnote in the 2012 election, though she could draw support from Obama if he veers too close to the political center.</p>",
+            "color_hex": "#268626ff",
+            "secondary_color_hex": "#7bd37bff",
+            "is_active": 0,
+            "image_url": null,
+            "electoral_victory_message": "<h3>Wow! You have won the election.</h3><p>This has to rank as one of the biggest upsets in political history. Prepare to implement your radically progressive agenda in the United States of America!</p>",
+            "electoral_loss_message": "<h3>Sorry, you have lost.</h3><p>This was about what everyone expected. Good job. Good effort.</p>",
+            "no_electoral_majority_message": "<h3>Sorry, you have lost.</h3><p>This was about what everyone expected. Good job. Good effort.</p>",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 27,
+        "fields": {
+            "first_name": "Newt",
+            "last_name": "Gingrich",
+            "election": 3,
+            "party": "Republican",
+            "state": "Georgia",
+            "priority": 5,
+            "description": "<p>ALTERNATE SCENARIO</p><p>After an upset in the Republican nomination battle, Newt Gingrich heads into the general election with strong support from fiscal and social conservatives. Better known for his House leadership in the 1990s, he must find a way to regain popularity and relevance, and to convince American voters that he can address their economic concerns more effectively than Obama.</p>",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/newt-gingrich-2012.jpg",
+            "electoral_victory_message": "<h3>Congratulations</h3>",
+            "electoral_loss_message": "<h3>Better luck next time</h3>",
+            "no_electoral_majority_message": "<h3>Interesting</h3>",
+            "description_as_running_mate": "<p>After competing as rivals for the Republican nomination, a Rick Santorum and Newt Gingrich ticket would effectively act as a compromise between those camps and consolidate their support and campaign resources.</p><p>After both candidates spent months making the case that Romney was too moderate, their joining of forces in the general election leaves little doubt as to the tone they intend to strike.</p>",
+            "candidate_score": 0.12,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 29,
+        "fields": {
+            "first_name": "Rick",
+            "last_name": "Santorum",
+            "election": 3,
+            "party": "Republican",
+            "state": "Pennsylvania",
+            "priority": 6,
+            "description": "<p>ALTERNATE SCENARIO</p><p>After an upset in the Republican nomination battle, Rick Santorum heads into the general election with staunch support from social conservatives. He also has several years of experience as a U.S. Senator.</p><p>Santorum's challenge will be the unite the business wing of the Republicans after defeating their preferred candidate, and to offer something to swing voters in the electorate at large.</p>",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/rick-santorum-2012.jpg",
+            "electoral_victory_message": "<h3>Congratulations!</h3>",
+            "electoral_loss_message": "<h3>oops</h3>",
+            "no_electoral_majority_message": "<h3>hmm</h3>",
+            "description_as_running_mate": "<p>After competing as rivals for the Republican nomination, a Rick Santorum and Newt Gingrich ticket would effectively act as a compromise between those camps and consolidate their support and campaign resources.</p><p>After both candidates spent months making the case that Romney was too moderate, their joining of forces in the general election leaves little doubt as to the tone they intend to strike.</p>",
+            "candidate_score": 0.08,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 30,
+        "fields": {
+            "first_name": "Joe",
+            "last_name": "Biden",
+            "election": 3,
+            "party": "Democrat",
+            "state": "Delaware",
+            "priority": 7,
+            "description": "<p>V.P. </p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": "#90C0FF",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/joe-biden-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>Joe Biden is the current Vice President and Obama's presumptive pick for 2012. He served as a Senator from Delaware for many years.</p><p>Well connected to the mainstream Democratic establishment, there are few complaints about Biden's performance thus far, though he does have a reputation as being gaffe-prone.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 31,
+        "fields": {
+            "first_name": "Paul",
+            "last_name": "Ryan",
+            "election": 3,
+            "party": "Republican",
+            "state": "Wisconsin",
+            "priority": 8,
+            "description": "<p>V.P.</p>",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/paul-ryan-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>Paul Ryan has gained national attention with his work on the federal budget as a Congressman from Wisconsin. His advocacy for deficit reduction appeals to a wide range of moderate conservatives, and his home state of Wisconsin promises to be a close call on election night.</p><p>On the other hand, Ryan has only served as a Congressman and has little experience running in a national or even a statewide election.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 32,
+        "fields": {
+            "first_name": "Rob",
+            "last_name": "Portman",
+            "election": 3,
+            "party": "Republican",
+            "state": "Ohio",
+            "priority": 9,
+            "description": "n/a",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/rob-portman-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>As a Senator from Ohio and former cabinet member for George W. Bush, Rob Portman would bring insider experience to a Republican Administration. He has worked with a particular focus on fiscal and economic issues, where he has advocated for much conservative legislation.</p><p>Ohio is a must-win state for both candidates, and Portman's presence could be crucial to a Republican victory there.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 33,
+        "fields": {
+            "first_name": "Marco",
+            "last_name": "Rubio",
+            "election": 3,
+            "party": "Republican",
+            "state": "Florida",
+            "priority": 10,
+            "description": "n/a",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/marco-rubio-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>A recently elected Senator from Florida, Marco Rubio brings strong political connections from that state. As a member of the Cuban-American community, he could help blunt the charge that Romney is indifferent to the rapidly-growing Hispanic community.</p><p>Rubio is also considered more conservative than some of Romney's other options, and is on good terms with the Tea Party movement. Florida is another must-win state for the Republicans in 2012.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 37,
+        "fields": {
+            "first_name": "Tim",
+            "last_name": "Pawlenty",
+            "election": 3,
+            "party": "Republican",
+            "state": "Minnesota",
+            "priority": 12,
+            "description": "n/a",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/tim-pawlenty-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>Tim Pawlenty served as the Governor of Minnesota for eight years and briefly sought the Republican nomination in 2011. He brings a reputation as a moderate and a strong manager, and could help burnish Romney's credentials in the upper Midwest.</p><p>However, if Romney wants to unite the conservative base of his party, Pawlenty may not be the best choice.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 38,
+        "fields": {
+            "first_name": "James P.",
+            "last_name": "Gray",
+            "election": 3,
+            "party": "Libertarian",
+            "state": "California",
+            "priority": 13,
+            "description": "n/a",
+            "color_hex": "#ffff73ff",
+            "secondary_color_hex": "#e8e8a6ff",
+            "is_active": 0,
+            "image_url": null,
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": null,
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 39,
+        "fields": {
+            "first_name": "Cheri",
+            "last_name": "Honkala",
+            "election": 3,
+            "party": "Green",
+            "state": "Pennsylvania",
+            "priority": 14,
+            "description": "n/a",
+            "color_hex": "#268626ff",
+            "secondary_color_hex": "#7bd37bff",
+            "is_active": 0,
+            "image_url": null,
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": null,
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 40,
+        "fields": {
+            "first_name": "Mike",
+            "last_name": "Huckabee",
+            "election": 3,
+            "party": "Republican",
+            "state": "Arkansas",
+            "priority": 15,
+            "description": "n/a",
+            "color_hex": "#FF0000",
+            "secondary_color_hex": "#FFA0A0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/mike-huckabee-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>As the former Governor of Arkansas and a 2008 Presidential candidate, Mike Huckabee is well known nationally, and contains impeccable credentials as a social and religious conservative. He has also spent several years in the media spotlight and is a comfortable public speaker and debater.</p><p>The risk with Huckabee is his potential to turn off moderate voters in swing states with religious pronouncements.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 41,
+        "fields": {
+            "first_name": "Andrew",
+            "last_name": "Napolitano",
+            "election": 3,
+            "party": "Independent",
+            "state": "New Jersey",
+            "priority": 16,
+            "description": "n/a",
+            "color_hex": "#FFFF00",
+            "secondary_color_hex": "#FFFFC0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/andrew-napolitano-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>Andrew Napolitano is a former New Jersey judge, a writer, and political commentator from the libertarian end of the political spectrum.</p><p>As a running mate, Napolitano would bring proven eloquence and media-savvy, and would raise the profile of the Ron Paul campaign, particularly on cable news.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 42,
+        "fields": {
+            "first_name": "Dennis",
+            "last_name": "Kucinich",
+            "election": 3,
+            "party": "Democrat",
+            "state": "Ohio",
+            "priority": 17,
+            "description": "n/a",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": "#90C0FF",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/dennis-kucinich-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>Dennis Kucinich is a former Congressman from Ohio, and also served as the mayor of Cleveland for two years in the 1970s.</p><p>Since Kucinich is a proponent of many left-wing views on economics, he could be a bridge candidate for Paul to draw protest votes from both the far left and right of the political spectrum. Paul could certainly use Kucinich to emphasize his anti-war, anti-DEA, and anti-Federal Reserve views as a common cause amongst both of these groups.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 43,
+        "fields": {
+            "first_name": "Rand",
+            "last_name": "Paul",
+            "election": 3,
+            "party": "Republican",
+            "state": "Kentucky",
+            "priority": 18,
+            "description": "n/a",
+            "color_hex": "#FFFF00",
+            "secondary_color_hex": "#FFFFC0",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/static/images/rand-paul-2012.jpg",
+            "electoral_victory_message": "n/a",
+            "electoral_loss_message": "n/a",
+            "no_electoral_majority_message": "n/a",
+            "description_as_running_mate": "<p>As a sitting U.S. Senator and son of Ron Paul, Rand Paul would make a natural running mate in many ways. He would immediately bring name recognition and political experience to an independent run by the elder Paul.</p><p>In reality though, it's unclear if Rand Paul would want to take on this role, as it would alienate him from the Republican Party and make a successful run for him in 2016 almost impossible.</p>",
+            "candidate_score": 0,
+            "running_mate": true
+        }
+    }
+]
+
+campaignTrail_temp.running_mate_json = [
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 7,
+        "fields": {
+            "candidate": 18,
+            "running_mate": 38
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 8,
+        "fields": {
+            "candidate": 19,
+            "running_mate": 39
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 1,
+        "fields": {
+            "candidate": 16,
+            "running_mate": 30
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 3,
+        "fields": {
+            "candidate": 17,
+            "running_mate": 31
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 18,
+        "fields": {
+            "candidate": 36,
+            "running_mate": 18
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 13,
+        "fields": {
+            "candidate": 29,
+            "running_mate": 27
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 12,
+        "fields": {
+            "candidate": 27,
+            "running_mate": 29
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 15,
+        "fields": {
+            "candidate": 29,
+            "running_mate": 40
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 9,
+        "fields": {
+            "candidate": 27,
+            "running_mate": 33
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 10,
+        "fields": {
+            "candidate": 27,
+            "running_mate": 40
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 20,
+        "fields": {
+            "candidate": 36,
+            "running_mate": 42
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 19,
+        "fields": {
+            "candidate": 36,
+            "running_mate": 41
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 16,
+        "fields": {
+            "candidate": 29,
+            "running_mate": 33
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 17,
+        "fields": {
+            "candidate": 29,
+            "running_mate": 31
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 11,
+        "fields": {
+            "candidate": 27,
+            "running_mate": 31
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 4,
+        "fields": {
+            "candidate": 17,
+            "running_mate": 32
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 5,
+        "fields": {
+            "candidate": 17,
+            "running_mate": 33
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 6,
+        "fields": {
+            "candidate": 17,
+            "running_mate": 37
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 21,
+        "fields": {
+            "candidate": 36,
+            "running_mate": 43
+        }
+    }
+]
+
+campaignTrail_temp.credits = "Girlie"
+
+campaignTrail_temp.global_parameter_json = [
+    {
+        "model": "campaign_trail.global_parameter",
+        "pk": 1,
+        "fields": {
+            "vote_variable": 1.125,
+            "max_swing": 0.12,
+            "start_point": 0.94,
+            "candidate_issue_weight": 10,
+            "running_mate_issue_weight": 3,
+            "issue_stance_1_max": -0.71,
+            "issue_stance_2_max": -0.3,
+            "issue_stance_3_max": -0.125,
+            "issue_stance_4_max": 0.125,
+            "issue_stance_5_max": 0.3,
+            "issue_stance_6_max": 0.71,
+            "global_variance": 0.01,
+            "state_variance": 0.005,
+            "question_count": 31,
+            "default_map_color_hex": "#C9C9C9",
+            "no_state_map_color_hex": "#999999"
+        }
+    }
+]
+
+campaignTrail_temp.opponents_default_json = [
+    {
+        "election": 3,
+        "candidates": [
+            16,
+            17,
+            36,
+            19
+        ]
+    }
+]
+
+campaignTrail_temp.opponents_weighted_json = [
+    {
+        "election": 3,
+        "candidates": [
+            16,
+            17,
+            36,
+            19
+        ]
+    }
+]
+
+campaignTrail_temp.temp_election_list = [
+    {
+        "id": 3,
+        "year": 2012,
+        "is_premium": 0,
+        "display_year": "Empire"
+    }
+]
+
+
+//#startcode
+
+
+function createMusicBox(playerElementId) {
+    const playerContainer = document.getElementById(playerElementId);
+
+    // Create elements
+    const musicBox = document.createElement('div');
+    musicBox.id = 'music_box';
+
+    const audio = document.createElement('audio');
+    audio.id = 'audio_player';
+
+    const trackListContainer = document.createElement('div');
+    trackListContainer.id = 'playlist';
+
+    const trackList = document.createElement('ul');
+    trackList.id = 'track_list';
+
+    const controls = document.createElement('div');
+    controls.id = 'controls';
+
+    // Create span elements for each control using Unicode symbols
+    const playPauseBtn = document.createElement('span');
+    playPauseBtn.id = 'play_pause_btn';
+    playPauseBtn.innerHTML = '&#9658;'; // ▶ Play symbol
+    playPauseBtn.style.cursor = 'pointer';
+
+    const prevBtn = document.createElement('span');
+    prevBtn.id = 'prev_btn';
+    prevBtn.innerHTML = '↞'; // ◀ Previous symbol
+    prevBtn.style.cursor = 'pointer';
+
+    const nextBtn = document.createElement('span');
+    nextBtn.id = 'next_btn';
+    nextBtn.innerHTML = '↠'; // ▶ Next symbol
+    nextBtn.style.cursor = 'pointer';
+
+    const loopBtn = document.createElement('span');
+    loopBtn.id = 'loop_btn';
+    loopBtn.innerHTML = '↻'; // 🔁 Loop symbol
+    loopBtn.style.cursor = 'pointer';
+
+    const shuffleBtn = document.createElement('span');
+    shuffleBtn.id = 'shuffle_btn';
+    shuffleBtn.innerHTML = '⇄'; // 🔀 Shuffle symbol
+    shuffleBtn.style.cursor = 'pointer';
+
+    // Progress and volume controls
+    const progressContainer = document.createElement('div');
+    progressContainer.id = 'progress_container';
+
+    const currentTime = document.createElement('span');
+    currentTime.id = 'current_time';
+    currentTime.textContent = '0:00';
+
+    const progressBar = document.createElement('input');
+    progressBar.type = 'range';
+    progressBar.id = 'progress_bar';
+    progressBar.value = 0;
+    progressBar.min = 0;
+    progressBar.step = 0.1;
+
+    const duration = document.createElement('span');
+    duration.id = 'duration';
+    duration.textContent = '0:00';
+
+    const volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.id = 'volume_slider';
+    volumeSlider.min = 0;
+    volumeSlider.max = 1;
+    volumeSlider.step = 0.01;
+    volumeSlider.value = 0.5;
+
+    // Append elements
+    progressContainer.append(currentTime, progressBar, duration);
+    controls.append(prevBtn, playPauseBtn, nextBtn, loopBtn, shuffleBtn);
+    trackListContainer.append(trackList);
+    musicBox.append(audio, progressContainer, controls, volumeSlider, trackListContainer);
+
+    playerContainer.appendChild(musicBox);
+
+    // Style the music box with a black theme and minimal design
+    Object.assign(musicBox.style, {
+        padding: '10px',
+        border: '1px solid #333',
+        borderRadius: '8px',
+        backgroundColor: '#845e5eff',
+        color: '#e6e6e6ff',
+        textAlign: 'center',
+        maxWidth: '250px',
+        fontFamily: 'Arial, sans-serif',
+    });
+
+    Object.assign(controls.style, {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginTop: '10px',
+    });
+
+    Object.assign(progressContainer.style, {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '5px',
+        width: '100%',
+    });
+
+    Object.assign(progressBar.style, {
+        flex: 1,
+    });
+
+    Object.assign(volumeSlider.style, {
+        width: '100%',
+        marginTop: '10px',
+    });
+
+    // Music player functionality
+    const songs = [
+        { title: 'Now or Never', src: 'https://files.catbox.moe/5asi41.mp3' },
+        //{ title: 'BLOOD.', src: 'https://files.catbox.moe/npyhgp.mp3' },
+        //{ title: 'DNA.', src: 'https://files.catbox.moe/3kq5j7.mp3' },
+        //{ title: 'Moonsickness', src: 'https://files.catbox.moe/2mtlde.mp3' },
+        //{ title: 'Wake Up Sleeper', src: 'https://files.catbox.moe/g3k8k8.mp3' },
+        //{ title: 'Me Against The World', src: 'https://files.catbox.moe/8828by.mp3' },
+        ////{ title: 'Lose Yourself', src: 'https://files.catbox.moe/6c9qa9.mp3' }, // marked for removal
+        //{ title: 'Jesus Walks', src: 'https://files.catbox.moe/6rwdcb.mp3' },
+        //{ title: '6:16 in LA', src: 'https://files.catbox.moe/46xp8j.mp3' },
+        //{ title: 'Fable', src: 'https://files.catbox.moe/kk39fc.mp3' },
+        ////{ title: 'Hey Lover', src: 'https://files.catbox.moe/vqfwdx.mp3' }, // marked for removal
+        //{ title: 'Tom\'s Diner', src: 'https://files.catbox.moe/i8d3qi.mp3' },
+        //{ title: 'euphoria', src: 'https://files.catbox.moe/jkr5t7.mp3' },
+        ////{ title: 'brutal', src: 'https://files.catbox.moe/lpmbjn.mp3' }, // marked for removal
+        //{ title: 'Black Out Days', src: 'https://files.catbox.moe/g9k1wo.mp3' },
+        //{ title: 'suffering', src: 'https://files.catbox.moe/wwp6q1.mp3' },
+        ////{ title: 'My Dearest Friends', src: 'https://files.catbox.moe/jgqdsu.mp3' }, // marked for transfer (ending)
+        //{ title: 'Dear Arkansas Daughter', src: 'https://files.catbox.moe/hpbbvm.mp3' },
+        //{ title: 'reincarnated', src: 'https://files.catbox.moe/xnaqn7.mp3' } 
+    ];
+    let currentSongIndex = 0;
+    let isPlaying = false;
+    let isLooping = false;
+    let isShuffling = false;
+
+    function loadSong(index) {
+        audio.src = songs[index].src;
+        audio.load();
+        updateTrackListHighlight(index);
+    }
+
+    function updateTrackListHighlight(index) {
+        const trackItems = document.querySelectorAll('#track_list li');
+        trackItems.forEach((item, i) => {
+            item.style.fontWeight = i === index ? 'bold' : 'normal';
+        });
+    }
+
+    // Populate track list
+    songs.forEach((song, index) => {
+        const li = document.createElement('li');
+        li.textContent = song.title;
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', () => {
+            currentSongIndex = index;
+            loadSong(index);
+            playSong();
+        });
+        trackList.appendChild(li);
+    });
+
+    function playSong() {
+        audio.play();
+        isPlaying = true;
+        playPauseBtn.innerHTML = '&#10074;&#10074;'; // Pause (||)
+    }
+
+    function pauseSong() {
+        audio.pause();
+        isPlaying = false;
+        playPauseBtn.innerHTML = '&#9658;'; // Play (▶)
+    }
+
+    playPauseBtn.addEventListener('click', () => {
+        isPlaying ? pauseSong() : playSong();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        loadSong(currentSongIndex);
+        playSong();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        loadSong(currentSongIndex);
+        playSong();
+    });
+
+    loopBtn.addEventListener('click', () => {
+        isLooping = !isLooping;
+        audio.loop = isLooping;
+        loopBtn.style.color = isLooping ? 'lightblue' : '#fff';
+    });
+
+    shuffleBtn.addEventListener('click', () => {
+        isShuffling = !isShuffling;
+        shuffleBtn.style.color = isShuffling ? 'lightblue' : '#fff';
+    });
+
+    audio.addEventListener('ended', () => {
+        if (isShuffling) {
+            currentSongIndex = Math.floor(Math.random() * songs.length);
+        } else {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+        }
+        loadSong(currentSongIndex);
+        playSong();
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        progressBar.value = audio.currentTime;
+        currentTime.textContent = formatTime(audio.currentTime);
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+        progressBar.max = audio.duration;
+        duration.textContent = formatTime(audio.duration);
+    });
+
+    progressBar.addEventListener('input', () => {
+        audio.currentTime = progressBar.value;
+    });
+
+    volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+    });
+
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+        return `${mins}:${secs}`;
+    }
+
+    // Load the first song initially
+    loadSong(currentSongIndex);
+    playSong();
+}
+
+// Append the music box to an element with the ID 'player'
+
+createMusicBox('theme_picker');
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "rgb(132, 94, 94)";
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "rgb(132, 94, 94)";
+
+document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+
+$("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+
+$(".container")[0].style.backgroundColor = "#734e4eff";
+
+document.getElementById("header").src = "https://i.imgur.com/tqmREI2.png";
+
+document.body.background = "https://i.imgur.com/pG2JKWA.jpeg";
+
+document.head.innerHTML += "<style>#results_container {color:#ffffff;} .inner_window_w_desc {background-color:#c8a6a6!important;}</style>";
+
+
+
+const Additives = document.createElement("style");
+Additives.textContent = `
+  * {
+    border-color:#ffffff;
+  }
+`;
+document.head.appendChild(Additives);
+
+//#endcode
