@@ -5409,12 +5409,166 @@ e.answer_score_global_json = []
 e.answer_score_issue_json = []
 e.answer_score_state_json = []
 e.answer_feedback_json = []
+
 const gameState = {
-  publicOptionIncluded: false,
-  stimulusSize: "medium",
-  trustFromProgressives: 0,
-  legislativeCapital: 5,
-  reelectionSupport: 0,
+  "path": "Liberal",
+  "gameEnabled": true,
+  "Bills": {
+    "HealthcareReform": {
+        "pk": "Obamnacare",
+            "provisions": {
+                "IndividualMandate": false,
+                "PublicOption": false,
+                "MedicaidExpansion": false,
+                "EmployerRequirement": false,
+                "FederalExchange": false,
+                "StateExchange": false,
+                "LowFundingTaxes": false,
+                "HighFundingTaxes": false,
+                "CadillacPlanTax": false,
+                "PreExistingConditionsCovered": false,
+                "YoungAdultCoverage": false,
+                "DrugPriceNegotiation": false,
+                "AbortionFunding": false
+            
+            }
+    },
+    "WallstreetReform": {
+        "pk": "Sverdlov",
+            "provisions": {
+                "ConsumerFinancialProtectionBureau": false,
+                "VolckerRule": false,
+                "FinancialStabilityOversightCouncil": false,
+                "BrownKaufmanAmendment": false,
+                "Derivatives Regulation": false,
+                "GlassSteagall": false
+            }
+
+    },
+    "WallstreetReform": {
+        "pk": "Sverdlov",
+            "provisions": {
+                "ConsumerFinancialProtectionBureau": false,
+                "VolckerRule": false,
+                "FinancialStabilityOversightCouncil": false,
+                "BrownKaufmanAmendment": false,
+                "Derivatives Regulation": false,
+                "GlassSteagall": false
+            }
+
+    },
+    "WallstreetReform": {
+        "pk": "Sverdlov",
+            "provisions": {
+                "ConsumerFinancialProtectionBureau": false,
+                "VolckerRule": false,
+                "FinancialStabilityOversightCouncil": false,
+                "BrownKaufmanAmendment": false,
+                "Derivatives Regulation": false,
+                "GlassSteagall": false
+            }
+
+    }
+    },
+  "Laws": {
+        /// all bills which get passed will be pushed here
+    },
+  "Statistics": {},
+  "Historical": 0,
+  "pictureDict": {
+    0: "https://i.imgur.com/KFchink.png",
+    1: "https://i.imgur.com/2hZEP5I.png",
+    2: "https://i.imgur.com/Bvkpip3.png",
+    3: "https://i.imgur.com/KU68xXd.png",
+    4: "https://i.imgur.com/KFchink.png", //VN Checkpoint
+    5: "https://i.imgur.com/mrJX5Kt.png",
+    6: "https://i.imgur.com/bIMBmdA.png",
+    7: "https://i.imgur.com/4KrrPMs.png",
+    8: "https://i.imgur.com/kqsv5tC.png",
+    9: "https://i.imgur.com/oU6a69N.png",
+    10: "https://i.imgur.com/DbymHHc.png",
+    11: "https://i.imgur.com/LW6cpLy.png",
+    12: "https://i.imgur.com/xFyIf3o.png",
+    13: "https://i.imgur.com/HE78JiM.png",
+    14: "https://i.imgur.com/KFchink.png", // VN checkpoint
+    15: "https://i.imgur.com/U1gA4yz.png",
+    16: "https://i.imgur.com/I9W5Npi.png",
+    17: "https://i.imgur.com/ZUUMbne.png",
+    18: "https://i.imgur.com/lZ7GKtJ.png",
+    19: "https://i.imgur.com/eEcDqUh.png",
+    20: "https://i.imgur.com/Fhz2yW7.png",
+    21: "https://i.imgur.com/KFchink.png", // VN checkpoint
+    22: "https://i.imgur.com/KFchink.png", 
+    23: "https://i.imgur.com/BCPNTEd.png",
+    24: "https://i.imgur.com/xLs4QWp.png", // DNC
+    25: "https://i.imgur.com/L6TLiAY.png",
+    26: "https://i.imgur.com/KFchink.png",
+    27: "https://i.imgur.com/KFchink.png",
+    28: "https://i.imgur.com/eWAwxYg.png",
+    29: "https://i.imgur.com/jQkAx6g.png",
+  }
+};
+
+var QuestionImage = gameState.pictureDict 
+
+function preloadImages(QuestionImage) {
+    for (var key in QuestionImage) {
+        var img = new Image();
+        img.src = QuestionImage[key];
+    }
+}
+preloadImages(QuestionImage);
+async function handleFooter() {
+    var gameWindow = document.getElementById('game_window');
+    addHeadquarterButton()
+    var existingFooter = document.getElementById('new_footer');
+    if (existingFooter) {
+        return;
+    }
+
+    var oldCandidatePic = document.getElementById('candidate_pic');
+
+    if(oldCandidatePic){
+        var candidatePicSrc = oldCandidatePic.src;
+        oldCandidatePic.remove();
+    }
+    else{
+        return
+    }
+
+    var oldRunningMatePic = document.getElementById('running_mate_pic');
+
+    if(oldRunningMatePic) {
+        var runningMatePicSrc = oldRunningMatePic.src;
+        oldRunningMatePic.remove();
+    }
+    else{
+        return
+    }
+
+    var new_footer = document.createElement("div");
+    new_footer.id = "new_footer";
+    new_footer.style.display = "flex";
+    new_footer.style.justifyContent = "center";
+    new_footer.style.alignItems = "center";
+
+    var candidatePic = createNewImageElement(candidatePicSrc, 'borderBottom');
+    var runningMatePic = createNewImageElement(runningMatePicSrc, 'borderBottom');
+
+    var candidateBox = createBox(candidatePic, "President", "Robert Kennedy");
+    var runningMateBox = createBox(runningMatePic, runningmaterole, runningmatefullname);
+
+    var questionInfo = "Question " + (campaignTrail_temp.question_number + 1) + " of " + campaignTrail_temp.global_parameter_json[0].fields.question_count;
+    var questionBox = createBoxWithTextAndPic(questionInfo, QuestionImage[campaignTrail_temp.question_number]);
+
+    new_footer.appendChild(candidateBox);
+    new_footer.appendChild(questionBox);
+    new_footer.appendChild(runningMateBox);
+
+    gameWindow.appendChild(new_footer);
+
+    var signDisplay = document.getElementsByClassName('inner_window_sign_display')[0];
+    signDisplay.style.display = "none";
 };
 const administrationTab = document.createElement("div");
 administrationTab.id = "Administration";
@@ -5443,667 +5597,113 @@ Wackyish.textContent = `
 `;
 document.head.appendChild(Wackyish);
 
-const FairPayHistorical = [
+
+const AllQuestions = [
     {
         "model": "campaign_trail.question",
         "pk": "Fair_Pay_Act",
         "fields": {
-            "priority": 0,
+            "effects": "effect",
+            "conditions": "conditions",
             "description": "What will you say while signing the lily ledbetter fair pay act?",
             "likelihood": 1
         }
     },
     {
-        "model": "campaign_trail.answer",
-        "pk": "Fair_Pay_Act_Speech_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Fair_Pay_Act",
-            "description": "It is fitting that with the very first bill I sign – the Lilly Ledbetter Fair Pay Restoration Act – we are upholding one of this nation’s first principles: that we are all created equal and each deserve a chance to pursue our own version of happiness."
-        }
-    }
-]
-const StimulusBillHistorical = [
-    {
         "model": "campaign_trail.question",
         "pk": "Stimulus_Bill",
         "fields": {
-            "priority": 0,
+            "effects": "effect",
+            "conditions": "conditions",
             "description": "What kind of action will you be aiming for with the stimulus?",
             "likelihood": 1
         }
     },
     {
-        "model": "campaign_trail.answer",
-        "pk": "Pass_Stimulus_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Stimulus_Bill",
-            "description": ". . . the plan is not perfect. No plan is. I can't tell you for sure that everything in this plan will work exactly as we hope, but I can tell you with complete confidence that a failure to act will only deepen this crisis as well as the pain felt by millions of Americans."
-        }
-    }
-]
-const JointSessionSpeechHistorical = [
-    {
         "model": "campaign_trail.question",
         "pk": "Joint_Session_Speech",
         "fields": {
-            "priority": 1,
+            "effects": "effect",
+            "conditions": "conditions",
             "description": "In your speech to a joint session to congress, what will you say?",
             "likelihood": 1
         }
     },
     {
-        "model": "campaign_trail.answer",
-        "pk": "Joint_Session_Speech_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Joint_Session_Speech",
-            "description": "I know that we haven’t agreed on every issue thus far, and there are surely times in the future when we will part ways.  But I also know that every American who is sitting here tonight loves this country and wants it to succeed.  That must be the starting point for every debate we have in the coming months . . ."
-        }
-    }
-]
-const OnlineTownHallInteractionHistorical = [
-    {
         "model": "campaign_trail.question",
         "pk": "Online_Town_Hall_Interaction",
         "fields": {
-            "priority": 1,
+            "effects": "effect",
+            "conditions": "conditions",
             "description": "Your administration is holding the first ever 'online town hall', what do you plan to open with?",
             "likelihood": 1
         }
     },
     {
-        "model": "campaign_trail.answer",
-        "pk": "Online_Town_Hall_Interaction_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Online_Town_Hall_Interaction",
-            "description": "Thank you so much. Well, it is great to see all of you. And I am thrilled that all of you here in the White House and everybody who is viewing this online is participating in this experiment that we're trying out. When I was running for President, I promised to open up the White House to the American people. And this event, which is being streamed live over the Internet, marks an important step towards achieving that goal."
-        }
-    }
-]
-const AutomotiveBailoutsHistorical = [
-    {
         "model": "campaign_trail.question",
         "pk": "Automotive_Bailouts",
         "fields": {
-            "priority": 1,
+            "effects": "effect",
+            "conditions": "conditions",
             "description": "Over the reccession, the automotive industry has stuggled with the decline in consumer spending, and went bankrupt. What will you do in response?",
             "likelihood": 1
         }
-    },
+    }
+]
+const AllAnswers = [
     {
+        "model": "campaign_trail.answer",
+        "pk": "Fair_Pay_Act_Speech_Historical",
+        "fields": {
+            "effects": { "Historical" : 1 },
+            "conditions": { "gameEnabled": true },
+            "question": "Fair_Pay_Act",
+            "description": "It is fitting that with the very first bill I sign – the Lilly Ledbetter Fair Pay Restoration Act – we are upholding one of this nation’s first principles: that we are all created equal and each deserve a chance to pursue our own version of happiness."
+        }
+    },
+        {
+        "model": "campaign_trail.answer",
+        "pk": "Pass_Stimulus_Historical",
+        "fields": {
+            "effects": { "Historical" : 1 },
+            "conditions": { "gameEnabled": true },
+            "question": "Stimulus_Bill",
+            "description": ". . . the plan is not perfect. No plan is. I can't tell you for sure that everything in this plan will work exactly as we hope, but I can tell you with complete confidence that a failure to act will only deepen this crisis as well as the pain felt by millions of Americans."
+        }
+    },
+        {
+        "model": "campaign_trail.answer",
+        "pk": "Joint_Session_Speech_Historical",
+        "fields": {
+            "effects": { "Historical" : 1 },
+            "conditions": { "gameEnabled": true },
+            "question": "Joint_Session_Speech",
+            "description": "I know that we haven’t agreed on every issue thus far, and there are surely times in the future when we will part ways.  But I also know that every American who is sitting here tonight loves this country and wants it to succeed.  That must be the starting point for every debate we have in the coming months . . ."
+        }
+    },
+        {
+        "model": "campaign_trail.answer",
+        "pk": "Online_Town_Hall_Interaction_Historical",
+        "fields": {
+            "effects": { "Historical" : 1 },
+            "conditions": { "gameEnabled": true },
+            "question": "Online_Town_Hall_Interaction",
+            "description": "Thank you so much. Well, it is great to see all of you. And I am thrilled that all of you here in the White House and everybody who is viewing this online is participating in this experiment that we're trying out. When I was running for President, I promised to open up the White House to the American people. And this event, which is being streamed live over the Internet, marks an important step towards achieving that goal."
+        }
+    },
+        {
         "model": "campaign_trail.answer",
         "pk": "Automotive_Bailouts_Historical",
         "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
+            "effects": { "Historical" : 1 },
+            "conditions": { "gameEnabled": true },
             "question": "Automotive_Bailouts",
             "description": "We cannot, and must not, and we will not let our auto industry simply vanish.  This industry is like no other -- it's an emblem of the American spirit; a once and future symbol of America’s success.  It's what helped build the middle class and sustained it throughout the 20th century."
         }
     }
 ]
-const FirstCourtNominationHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Supreme_Court_Nomination",
-        "fields": {
-            "priority": 1,
-            "description": "With you coming into office, a a Justice has decided to retire. What will you do in response to this?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Supreme_Court_Nomination_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Supreme_Court_Nomination",
-            "description": "Judge Sotomayor is a distinguished graduate of two of America's leading universities. She's been a big-city prosecutor and a corporate litigator. She spent 6 years as a trial judge on the U.S. District Court and would replace Justice Souter as the only Justice with experience as a trial judge, a perspective that would enrich the judgments of the Court."
-        }
-    },
-    
-]
-const CairoSpeechHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Cairo_Speech",
-        "fields": {
-            "priority": 1,
-            "description": "As the President, you have a vital role in foreign policy, and are giving a speech in Cairo on middle-eastern relations.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Cairo_Speech_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Cairo_Speech",
-            "description": "So long as our relationship is defined by our differences, we will empower those who sow hatred rather than peace, those who promote conflict rather than the cooperation that can help all of our people achieve justice and prosperity. And this cycle of suspicion and discord must end."
-        }
-    }
-]
-const LouisGatesArrestedHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Professor_Louis_Gates_Arrested",
-        "fields": {
-            "priority": 1,
-            "description": " Thank you, Mr. President. Recently Professor Henry Louis Gates, Jr., was arrested at his home in Cambridge. What does that incident say to you, and what does it say about race relations in America?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Professor_Louis_Gates_Arrested_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Professor_Louis_Gates_Arrested",
-            "description": "Now, I don't know, not having been there and not seeing all the facts, what role race played in that, but I think it's fair to say, number one, any of us would be pretty angry; number two, that the Cambridge Police acted stupidly in arresting somebody when there was already proof that they were in their own home; and number three, what I think we know separate and apart from this incident is that there is a long history in this country of African Americans and Latinos being stopped by law enforcement disproportionately. That's just a fact."
-        }
-    }
-]
-const AddressHealthcareReformHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Address_Healthcare_Reform",
-        "fields": {
-            "priority": 2,
-            "description": "How will you address a joint session of congress on healthcare reform?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Address_Healthcare_Reform_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Address_Healthcare_Reform",
-            "description": "We spend one and a half times more per person on health care than any other country, but we aren't any healthier for it."
-        }
-    }
-]
-const NobelPeacePrizeHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Nobel_Peace_Prize",
-        "fields": {
-            "priority": 2,
-            "description": "In a strange decision, the nobel Prize committee has decided to award you. What will you respond with?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Nobel_Peace_Prize_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Nobel_Peace_Prize",
-            "description": "I know that throughout history, the Nobel Peace Prize has not just been used to honor specific achievement, it's also been used as a means to give momentum to a set of causes. And that is why I will accept this award as a call to action, a call for all nations to confront the common challenges of the 21st century."
-        }
-    }
-]
-const HateCrimesActHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Matthew_Shepard_Hate_Crimes_Act",
-        "fields": {
-            "priority": 2,
-            "description": "Congress has passed a bill to extend hate crime coverage to several other groups.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Matthew_Shepard_Hate_Crimes_Act_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Matthew_Shepard_Hate_Crimes_Act",
-            "description": "And that's why, through this law, we will strengthen the protections against crimes based on the color of your skin, the faith in your heart, or the place of your birth. We will finally add Federal protections against crimes based on gender, disability, gender identity, or sexual orientation."
-        }
-    }
-]
-const AfghanistanPolicyHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Afghanistan_Policy",
-        "fields": {
-            "priority": 2,
-            "description": "You are announcing your policy on afgahanistan at a recent speech at west point.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Afghanistan_Policy_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Afghanistan_Policy",
-            "description": "This review is now complete. And as Commander in Chief, I have determined that it is in our vital national interest to send an additional 30,000 U.S. troops to Afghanistan. After 18 months, our troops will begin to come home. These are the resources that we need to seize the initiative, while building the Afghan capacity that can allow for a responsible transition of our forces out of Afghanistan."
-        }
-    }
-]
-const StateOfTheUnionHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "State_Of_The_Union",
-        "fields": {
-            "priority": 2,
-            "description": "It is time for you to address the nation in a State of the Union Address.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "State_Of_The_Union_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "State_Of_The_Union",
-            "description": "There are stories like this all across America. And after 2 years of recession, the economy is growing again. Retirement funds have started to gain back some of their value. Businesses are beginning to invest again, and slowly some are starting to hire again."
-        }
-    }
-]
-const PatientProtectionAffordableCareActHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Pass_PPACA",
-        "fields": {
-            "priority": 2,
-            "description": "After many setbacks and major decisions, the PPACA has passed congress, and waits for you to sign it.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Pass_PPACA_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Pass_PPACA",
-            "description": "Today, after almost a century of trying, today, after over a year of debate, today, after all the votes have been tallied, health insurance reform becomes law in the United States of America--today."
-        }
-    }
-]
-const OilSpillHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Oil_Spill",
-        "fields": {
-            "priority": 2,
-            "description": "BP has caused a massive oil spill in the gulf of Mexico. How do you respond?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Oil_Spill_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Oil_Spill",
-            "description": "We will fight this spill with everything we've got for as long as it takes. We will make BP pay for the damage their company has caused. And we will do whatever's necessary to help the Gulf Coast and its people recover from this tragedy."
-        }
-    },
-]
-const SecondCourtNominationHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Second_Supreme_Court_Nomination",
-        "fields": {
-            "priority": 2,
-            "description": "A Second Justice on the Supreme court has retired, and it your job to nominate a replacement.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Second_Supreme_Court_Nomination_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Second_Supreme_Court_Nomination",
-            "description": "Elena is widely regarded as one of the Nation's foremost legal minds. She's an acclaimed legal scholar with a rich understanding of constitutional law. She's a former White House aide with a lifelong commitment to public service and a firm grasp of the nexus and boundaries between our three branches of Government."
-        }
-    }
-]
-const DoddFrankHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Dodd_Frank",
-        "fields": {
-            "priority": 2,
-            "description": "After alot of work, a law has been passed to regulate wallstreet, how will you respond?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Dodd_Frank_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Dodd_Frank",
-            "description": "With this law, we'll crack down on abusive practices in the mortgage industry. We'll make sure that contracts are simpler, putting an end to many hidden penalties and fees in complex mortgages, so folks know what they're signing. With this law, students who take out college loans will be provided clear and concise information about their obligations. And with this law, ordinary investors, like seniors and folks saving for retirement, will be able to receive more information about the costs and risks of mutual funds and other investment products so that they can make better financial decisions as to what will work for them."
-        }
-    }
-]
-const MidtermsCampaignOneHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Midterms_Campaign_One",
-        "fields": {
-            "priority": 2,
-            "description": "What is your strategy for the 2010 Midterms?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Midterms_Campaign_One_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Midterms_Campaign_One",
-            "description": "Historical"
-        }
-    }
-]
-const MidtermsCampaignTwoHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Midterms_Campaign_Two",
-        "fields": {
-            "priority": 2,
-            "description": "You are getting into an interview with Jon Stuart for the midterms. What will you say?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Midterms_Campaign_Two_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Midterms_Campaign_Two",
-            "description": "But certainly in terms of the folks who voted for me, my expectation and hope is, if you look at the track record that we've accomplished in very difficult circumstances over the last 18 months, we have done an awful lot that we talked about during the campaign, and we're going to do more in the years to come."
-        }
-    }
-]
-const MidtermsResultHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Midterms_Result",
-        "fields": {
-            "priority": 2,
-            "description": "The midterms have arrived, and they are not good.",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Midterms_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Midterms_Result",
-            "description": "Historical"
-        }
-    }
-]
-const PostMidtermsBillHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Post_Midterms_Bill",
-        "fields": {
-            "priority": 2,
-            "description": "Pass anything before the midterm elected reps take office?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Post_Midterms_Bill_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Post_Midterms_Bill",
-            "description": "Historical"
-        }
-    }
-]
-const TucsonHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Tucson_Shooting",
-        "fields": {
-            "priority": 2,
-            "description": "US rep was shot in a shooting, what do you say?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Tucson_Shooting_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Tucson_Shooting",
-            "description": "Historical"
-        }
-    }
-]
-const RemarksOnEgyptHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Remarks_On_Egypt",
-        "fields": {
-            "priority": 2,
-            "description": "Egypt, comment on it",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Remarks_On_Egypt_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Remarks_On_Egypt",
-            "description": "Historical"
-        }
-    }
-]
-const SituationInLibyaHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Situation_In_Libya",
-        "fields": {
-            "priority": 2,
-            "description": "Libya, comment on it, not much",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Situation_In_Libya_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Situation_In_Libya",
-            "description": "Historical"
-        }
-    }
-]
-const DeathOfBinLadenHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Death_Of_Bin_Laden",
-        "fields": {
-            "priority": 2,
-            "description": "Bin laden FUCKING DIES",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Death_Of_Bin_Laden_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Death_Of_Bin_Laden",
-            "description": "Historical"
-        }
-    }
-]
-const DebtCeilingHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Debt_Ceiling_Crisis",
-        "fields": {
-            "priority": 2,
-            "description": "deal with the debt crisis",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Debt_Ceiling_Crisis_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Debt_Ceiling_Crisis",
-            "description": "Historical"
-        }
-    }
-]
-const NorthAmericaSummitHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "North_American_Summit",
-        "fields": {
-            "priority": 2,
-            "description": "what happens at the north america leadership summit?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "North_American_Summit_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "North_American_Summit",
-            "description": "Boring bullshit"
-        }
-    }
-]
-const SameSexMarriageHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Same_Sex_Marriage",
-        "fields": {
-            "priority": 2,
-            "description": "Biden popped off, whats your opinion on the homosexuals getting married?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Same_Sex_Marriage_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Same_Sex_Marriage",
-            "description": "Support gay marriage"
-        }
-    }
-]
-const DreamActHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "DREAM_Act",
-        "fields": {
-            "priority": 2,
-            "description": "DREAM Act and DACA question",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "DREAM_Act_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "DREAM_Act",
-            "description": "Issue DACA"
-        }
-    }
-]
-const CampaignStrategyHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "Campaign_Strategy",
-        "fields": {
-            "priority": 2,
-            "description": "What is your campaign strategy?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "Campaign_Strategy_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "Campaign_Strategy",
-            "description": "New Media Game Pop off"
-        }
-    }
-]
-const StateVisitHistorical = [
-    {
-        "model": "campaign_trail.question",
-        "pk": "State_Visit",
-        "fields": {
-            "priority": 2,
-            "description": "Some on the left thought that you were not very vigorous in your opposition to the anti-union policies of Governor Scott Walker in Wisconsin. What do you have to say about this?",
-            "likelihood": 1
-        }
-    },
-    {
-        "model": "campaign_trail.answer",
-        "pk": "State_Visit_Historical",
-        "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
-            "question": "State_Visit",
-            "description": "Go to Des Moines then back to Chicago"
-        }
-    }
-]
 
-FairPayHistorical.forEach(item => {
-    if (item.model === "campaign_trail.question") {
-        e.questions_json.push(item);
-        } else if (item.model === "campaign_trail.answer") {
-            e.answers_json.push(item);
-        }
-}
-);
+
 
 e.cyoa = true
 
@@ -6111,389 +5711,46 @@ var HealthcareReformPoints = 0
 
 e.noCounter = 0;
 
+
+function AnswerGrabberApplication() {
+    const wanser = e.player_answers[e.player_answers.length - 1];
+
+    for (let i = 0; i < e.answers_json.length; i++) {
+        if (e.answers_json[i].pk === wanser) return e.answers_json[i];
+        var returnedAnswer = e.answers_json[i] 
+    }
+    const conditionsX = returnedAnswer.fields.conditions;
+    const effectsX = returnedAnswer.fields.effects;
+
+    const allConditionsMet = Object.entries(conditionsX)
+        .every(([key, value]) => gameState[key] === value);
+
+    if (allConditionsMet) {
+        for (const [key, value] of Object.entries(effectsX)) {
+            gameState[key] = (gameState[key] || 0) + value;
+        }
+    }
+}
+
+function isQuestionVisible(q, gameState) {
+  const pathMatch = !q.path || q.path === gameState.path;
+  const conditionsMet = !q.conditions || q.conditions.every(key => gameState[key]);
+  return pathMatch && conditionsMet;
+}
+
+e.questions_json = AllQuestions.filter(q => isQuestionVisible(q, gameState));
+
+e.answers_json = AllAnswers
+
+campaignTrail_temp.candidate_image_url = "https://i.imgur.com/0AkCCVZ.jpeg";
+campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/Pw7OIKw.png";
+campaignTrail_temp.candidate_last_name = "Obama";
+campaignTrail_temp.running_mate_last_name = "Biden";
+
 cyoAdventure = function(a) {
-    var Pulled_Answer_PK = e.player_answers[e.player_answers.length-1];
     ans = e.player_answers[e.player_answers.length-1];
     e.noCounter += 1
-    var Question_Switcher = e.noCounter;
-    switch(Pulled_Answer_PK) {
-        default:
-        break;
-        case "Fair_Pay_Act_Speech_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Pass_Stimulus_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Joint_Session_Speech_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Online_Town_Hall_Interaction_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Automotive_Bailouts_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Supreme_Court_Nomination_Historical":
-        break;
-        case "Cairo_Speech_Historical":
-        break;
-        case "Professor_Louis_Gates_Arrested_Historical":
-        break;
-        case "Address_Healthcare_Reform_Historical":
-            HealthcareReformPoints += 2;
-        break;
-        case "Nobel_Peace_Prize_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Matthew_Shepard_Hate_Crimes_Act_Historical":
-        break;
-        case "Afghanistan_Policy_Historical":
-        break;
-        case "State_Of_The_Union_Historical":
-            HealthcareReformPoints += 1;
-        break;
-        case "Pass_PPACA_Historical":
-        break;
-        case "Oil_Spill_Historical":
-        break;
-        case "Second_Supreme_Court_Nomination_Historical":
-        break;
-        case "Dodd_Frank_Historical":
-        break;
-        case "Midterms_Campaign_One_Historical":
-        break;
-        case "Midterms_Campaign_Two_Historical":
-        break;
-        case "Midterms_Historical":
-        break;
-        case "Post_Midterms_Bill_Historical":
-        break;
-        case "Tucson_Shooting_Historical":
-        break;
-        case "Remarks_On_Egypt_Historical":
-        break;
-        case "Situation_In_Libya_Historical":
-        break;
-        case "Death_Of_Bin_Laden_Historical":
-        break;
-        case "Debt_Ceiling_Crisis_Historical":
-        break;
-        case "North_American_Summit_Historical":
-        break;
-        case "Same_Sex_Marriage_Historical":
-        break;
-        case "DREAM_Act_Historical":
-        break;
-        case "Campaign_Strategy_Historical":
-        break;
-        case "State_Visit_Historical":
-        break;
-    }   
-    switch (Question_Switcher) {
-        default:
-        break;
-        case 1:
-            StimulusBillHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 2:
-            JointSessionSpeechHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 3:
-            OnlineTownHallInteractionHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 4:
-            AutomotiveBailoutsHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 5:
-            FirstCourtNominationHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 6:
-            CairoSpeechHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 7:
-            LouisGatesArrestedHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 8:
-            AddressHealthcareReformHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 9:
-            NobelPeacePrizeHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 10:
-            HateCrimesActHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 11:
-            AfghanistanPolicyHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 12:
-            StateOfTheUnionHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 13:
-            PatientProtectionAffordableCareActHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 14:
-            OilSpillHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 15:
-            SecondCourtNominationHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 16:
-            DoddFrankHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 17:
-            MidtermsCampaignOneHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 18:
-            MidtermsCampaignTwoHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 19:
-            MidtermsResultHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 20:
-            PostMidtermsBillHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 21:
-            TucsonHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 22:
-            RemarksOnEgyptHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 23:
-            SituationInLibyaHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 24:
-            DeathOfBinLadenHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 25:
-            DebtCeilingHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 26:
-            NorthAmericaSummitHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 27:
-            SameSexMarriageHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 28:
-            DreamActHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 29:
-            CampaignStrategyHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-        case 30:
-            StateVisitHistorical.forEach(item => {
-                if (item.model === "campaign_trail.question") {
-                    e.questions_json.push(item);
-                } else if (item.model === "campaign_trail.answer") {
-                        e.answers_json.push(item);
-                }
-            }
-            );
-        break;
-    }
 
-
+    AnswerGrabberApplication();
+    console.log(gameState);
 }
