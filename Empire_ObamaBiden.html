@@ -1,3 +1,5 @@
+
+
 e.questions_json = [
 
 ]
@@ -5475,101 +5477,11 @@ const gameState = {
     },
   "Statistics": {},
   "Historical": 0,
-  "pictureDict": {
-    0: "https://i.imgur.com/KFchink.png",
-    1: "https://i.imgur.com/2hZEP5I.png",
-    2: "https://i.imgur.com/Bvkpip3.png",
-    3: "https://i.imgur.com/KU68xXd.png",
-    4: "https://i.imgur.com/KFchink.png", //VN Checkpoint
-    5: "https://i.imgur.com/mrJX5Kt.png",
-    6: "https://i.imgur.com/bIMBmdA.png",
-    7: "https://i.imgur.com/4KrrPMs.png",
-    8: "https://i.imgur.com/kqsv5tC.png",
-    9: "https://i.imgur.com/oU6a69N.png",
-    10: "https://i.imgur.com/DbymHHc.png",
-    11: "https://i.imgur.com/LW6cpLy.png",
-    12: "https://i.imgur.com/xFyIf3o.png",
-    13: "https://i.imgur.com/HE78JiM.png",
-    14: "https://i.imgur.com/KFchink.png", // VN checkpoint
-    15: "https://i.imgur.com/U1gA4yz.png",
-    16: "https://i.imgur.com/I9W5Npi.png",
-    17: "https://i.imgur.com/ZUUMbne.png",
-    18: "https://i.imgur.com/lZ7GKtJ.png",
-    19: "https://i.imgur.com/eEcDqUh.png",
-    20: "https://i.imgur.com/Fhz2yW7.png",
-    21: "https://i.imgur.com/KFchink.png", // VN checkpoint
-    22: "https://i.imgur.com/KFchink.png", 
-    23: "https://i.imgur.com/BCPNTEd.png",
-    24: "https://i.imgur.com/xLs4QWp.png", // DNC
-    25: "https://i.imgur.com/L6TLiAY.png",
-    26: "https://i.imgur.com/KFchink.png",
-    27: "https://i.imgur.com/KFchink.png",
-    28: "https://i.imgur.com/eWAwxYg.png",
-    29: "https://i.imgur.com/jQkAx6g.png",
-  }
+  "QuestionPictureHolder": ''
 };
+gameState.QuestionPictureHolder[0]
 
-var QuestionImage = gameState.pictureDict 
 
-function preloadImages(QuestionImage) {
-    for (var key in QuestionImage) {
-        var img = new Image();
-        img.src = QuestionImage[key];
-    }
-}
-preloadImages(QuestionImage);
-async function handleFooter() {
-    var gameWindow = document.getElementById('game_window');
-    addHeadquarterButton()
-    var existingFooter = document.getElementById('new_footer');
-    if (existingFooter) {
-        return;
-    }
-
-    var oldCandidatePic = document.getElementById('candidate_pic');
-
-    if(oldCandidatePic){
-        var candidatePicSrc = oldCandidatePic.src;
-        oldCandidatePic.remove();
-    }
-    else{
-        return
-    }
-
-    var oldRunningMatePic = document.getElementById('running_mate_pic');
-
-    if(oldRunningMatePic) {
-        var runningMatePicSrc = oldRunningMatePic.src;
-        oldRunningMatePic.remove();
-    }
-    else{
-        return
-    }
-
-    var new_footer = document.createElement("div");
-    new_footer.id = "new_footer";
-    new_footer.style.display = "flex";
-    new_footer.style.justifyContent = "center";
-    new_footer.style.alignItems = "center";
-
-    var candidatePic = createNewImageElement(candidatePicSrc, 'borderBottom');
-    var runningMatePic = createNewImageElement(runningMatePicSrc, 'borderBottom');
-
-    var candidateBox = createBox(candidatePic, "President", "Robert Kennedy");
-    var runningMateBox = createBox(runningMatePic, runningmaterole, runningmatefullname);
-
-    var questionInfo = "Question " + (campaignTrail_temp.question_number + 1) + " of " + campaignTrail_temp.global_parameter_json[0].fields.question_count;
-    var questionBox = createBoxWithTextAndPic(questionInfo, QuestionImage[campaignTrail_temp.question_number]);
-
-    new_footer.appendChild(candidateBox);
-    new_footer.appendChild(questionBox);
-    new_footer.appendChild(runningMateBox);
-
-    gameWindow.appendChild(new_footer);
-
-    var signDisplay = document.getElementsByClassName('inner_window_sign_display')[0];
-    signDisplay.style.display = "none";
-};
 const administrationTab = document.createElement("div");
 administrationTab.id = "Administration";
 administrationTab.style.backgroundColor = "rgb(132, 94, 94)";
@@ -5598,13 +5510,14 @@ Wackyish.textContent = `
 document.head.appendChild(Wackyish);
 
 
+
 const AllQuestions = [
     {
         "model": "campaign_trail.question",
         "pk": "Fair_Pay_Act",
         "fields": {
-            "effects": "effect",
-            "conditions": "conditions",
+            "effects": { "QuestionPictureHolder": 'https://i.imgur.com/P1hpoBE.png' },
+            "conditions": { "gameEnabled": true },
             "description": "What will you say while signing the lily ledbetter fair pay act?",
             "likelihood": 1
         }
@@ -5614,7 +5527,7 @@ const AllQuestions = [
         "pk": "Stimulus_Bill",
         "fields": {
             "effects": "effect",
-            "conditions": "conditions",
+            "conditions": { "gameEnabled": true },
             "description": "What kind of action will you be aiming for with the stimulus?",
             "likelihood": 1
         }
@@ -5624,7 +5537,7 @@ const AllQuestions = [
         "pk": "Joint_Session_Speech",
         "fields": {
             "effects": "effect",
-            "conditions": "conditions",
+            "conditions": { "gameEnabled": true },
             "description": "In your speech to a joint session to congress, what will you say?",
             "likelihood": 1
         }
@@ -5634,7 +5547,7 @@ const AllQuestions = [
         "pk": "Online_Town_Hall_Interaction",
         "fields": {
             "effects": "effect",
-            "conditions": "conditions",
+            "conditions": { "gameEnabled": true },
             "description": "Your administration is holding the first ever 'online town hall', what do you plan to open with?",
             "likelihood": 1
         }
@@ -5644,7 +5557,7 @@ const AllQuestions = [
         "pk": "Automotive_Bailouts",
         "fields": {
             "effects": "effect",
-            "conditions": "conditions",
+            "conditions": { "gameEnabled": true },
             "description": "Over the reccession, the automotive industry has stuggled with the decline in consumer spending, and went bankrupt. What will you do in response?",
             "likelihood": 1
         }
@@ -5704,13 +5617,285 @@ const AllAnswers = [
 ]
 
 
-
 e.cyoa = true
 
 var HealthcareReformPoints = 0
 
 e.noCounter = 0;
 
+const observer = new MutationObserver((mutations, obs) => {
+  const gElement = document.querySelector("g");
+
+  if (!gElement || gElement.dataset.modified === "true") return;
+
+  gElement.innerHTML = "";
+
+  const FootyTwo = document.createElement("div");
+  const FootyStyle = document.createElement("style");
+  FootyStyle.textContent = `
+    .footy-style {
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+    }
+  `;
+  document.head.appendChild(FootyStyle);
+  FootyTwo.classList.add("footy-style");
+  gElement.appendChild(FootyTwo);
+
+  const BoxyOne = document.createElement("div");
+  const BoxyStyle = document.createElement("style");
+  BoxyStyle.textContent = `
+    .boxy-style {
+      border-color: rgb(31, 29, 25);
+      background-color: rgb(219, 208, 208);
+      margin-right: 80px;
+      margin-top: -35px;
+      border-radius: 3px;
+    }
+  `;
+  document.head.appendChild(BoxyStyle);
+  BoxyOne.classList.add("boxy-style");
+  FootyTwo.appendChild(BoxyOne);
+
+  const ObamaOne = document.createElement("img");
+  const ObamaStyle = document.createElement("style");
+  ObamaStyle.textContent = `
+    .obama-style {
+    height: 190px;
+    border-bottom: 2px solid black;
+    width: 128px;
+    border-radius: 3px;
+    }
+  `;
+  document.head.appendChild(ObamaStyle);
+  ObamaOne.classList.add("obama-style");
+  ObamaOne.src = 'https://i.imgur.com/o5VlST3.png';
+  BoxyOne.appendChild(ObamaOne);
+
+  const TitleOne = document.createElement("div");
+  const TitleStyle = document.createElement("style");
+  TitleStyle.textContent = `
+    .title-style {
+      font-size: 12px; 
+      padding: 2px; 
+      text-align: center; 
+      margin-top: -6px; 
+      margin-bottom: -12px;
+    }
+  `;
+  document.head.appendChild(TitleStyle);
+  TitleOne.classList.add("title-style");
+  BoxyOne.appendChild(TitleOne);
+
+  const HeadingTexts = document.createElement("h3");
+  const HeadingTextsStyle = document.createElement("style");
+  HeadingTexts.textContent = 'President';
+  HeadingTextsStyle.textContent = `
+    .heading-texts-style {
+      font-family: Trebuchet MS, sans-serif; 
+      color: #000000;
+      margin-bottom: -6px;
+      margin-top: 2px;
+    }
+  `;
+  document.head.appendChild(HeadingTextsStyle);
+  HeadingTexts.classList.add("heading-texts-style");
+  TitleOne.appendChild(HeadingTexts);
+
+  const NameOne = document.createElement("div");
+  const NameStyle = document.createElement("style");
+  NameStyle.textContent = `
+    .Name-style {
+      font-size: 16px; 
+      padding: 2px; 
+      text-align: center; 
+      margin-top: -16px; 
+      margin-bottom: -12px;
+    }
+  `;
+  document.head.appendChild(NameStyle);
+  NameOne.classList.add("Name-style");
+  BoxyOne.appendChild(NameOne);
+
+  const NameTexts = document.createElement("h3");
+  const NameTextsStyle = document.createElement("style");
+  NameTexts.textContent = 'Barack Obama';
+  NameTextsStyle.textContent = `
+    .Name-texts-style {
+      font-family: Trebuchet MS, sans-serif; 
+      color: #000000;
+    }
+  `;
+  document.head.appendChild(NameTextsStyle);
+  NameTexts.classList.add("Name-texts-style");
+  NameOne.appendChild(NameTexts);
+
+  const QuestionBoxes = document.createElement("div");
+  const QuestionBoxesStyle = document.createElement("style");
+  QuestionBoxesStyle.textContent = `
+    .questions-texts-style {
+      border-color: rgb(31, 29, 25); 
+      background-color: rgb(219, 208, 208);
+      border-radius: 3px;
+    }
+  `;
+  document.head.appendChild(QuestionBoxesStyle);
+  QuestionBoxes.classList.add("questions-texts-style");
+  FootyTwo.appendChild(QuestionBoxes);
+
+  const QuestionNumberBoxes = document.createElement("div");
+  const QuestionNumberBoxesStyle = document.createElement("style");
+  QuestionNumberBoxesStyle.textContent = `
+    .questions-numbers-style {
+      font-size: 16px; 
+      padding: 3px; 
+      text-align: center;
+    }
+  `;
+  document.head.appendChild(QuestionNumberBoxesStyle);
+  QuestionNumberBoxes.classList.add("questions-numbers-style");
+  QuestionBoxes.appendChild(QuestionNumberBoxes);
+
+  var QuestionNumberst = e.noCounter;
+  const QuestionsTexts = document.createElement("h3");
+  const QuestionsTextsStyle = document.createElement("style");
+  QuestionsTexts.textContent = `Question ${QuestionNumberst += 1} of 31`;
+  QuestionsTextsStyle.textContent = `
+    .question-texts-style {
+      font-family: Trebuchet MS, sans-serif; 
+      color: #000000;
+    }
+  `;
+  document.head.appendChild(QuestionsTextsStyle);
+  QuestionsTexts.classList.add("question-texts-style");
+  QuestionNumberBoxes.appendChild(QuestionsTexts);
+
+  const QuestionImagesOne = document.createElement("img");
+  const QuestionImageStyle = document.createElement("style");
+  QuestionImageStyle.textContent = `
+    .question-image-style {
+      height: 14em; 
+      border-top: 2px solid black;
+      question-image-style: 3px;
+    }
+  `;
+  document.head.appendChild(QuestionImageStyle);
+  QuestionImagesOne.classList.add("question-image-style");
+  QuestionImagesOne.src = picturewhen;
+  QuestionBoxes.appendChild(QuestionImagesOne);
+
+  const BoxyTwo = document.createElement("div");
+  const BoxyTwoStyle = document.createElement("style");
+  BoxyTwoStyle.textContent = `
+    .boxy-2-style {
+      border-color: rgb(31, 29, 25);
+      background-color: rgb(219, 208, 208);
+      margin-left:80px;
+      border-radius: 3px;
+      margin-top: -35px;
+      border-radius: 3px;
+    }
+  `;
+  document.head.appendChild(BoxyTwoStyle);
+  BoxyTwo.classList.add("boxy-2-style");
+  FootyTwo.appendChild(BoxyTwo);
+
+  const BidenOne = document.createElement("img");
+  const BidenStyle = document.createElement("style");
+  BidenStyle.textContent = `
+    .Biden-style {
+    height: 190px;
+    border-bottom: 2px solid black;
+    width: 128px;
+    border-radius:3px;
+    }
+  `;
+  document.head.appendChild(BidenStyle);
+  BidenOne.classList.add("Biden-style");
+  BidenOne.src = 'https://i.imgur.com/otKgYZ8.png';
+  BoxyTwo.appendChild(BidenOne);
+
+  const TitleVpOne = document.createElement("div");
+  const TitleVpStyle = document.createElement("style");
+  TitleVpStyle.textContent = `
+    .TitleVp-style {
+      font-size: 12px; 
+      padding: 2px; 
+      text-align: center; 
+      margin-top: -6px; 
+      margin-bottom: -12px;
+    }
+  `;
+  document.head.appendChild(TitleVpStyle);
+  TitleVpOne.classList.add("TitleVp-style");
+  BoxyTwo.appendChild(TitleVpOne);
+
+  const HeadingTextsTwo = document.createElement("h3");
+  const HeadingTextsTwoStyle = document.createElement("style");
+  HeadingTextsTwo.textContent = 'Vice President';
+  HeadingTextsTwoStyle.textContent = `
+    .heading-texts-style {
+      font-family: Trebuchet MS, sans-serif; 
+      color: #000000;
+      margin-bottom: -6px;
+      margin-top: 2px;
+    }
+  `;
+  document.head.appendChild(HeadingTextsTwoStyle);
+  HeadingTextsTwo.classList.add("heading-texts-style");
+  TitleVpOne.appendChild(HeadingTextsTwo);
+
+  const NameTwo = document.createElement("div");
+  const NameTwoStyle = document.createElement("style");
+  NameTwoStyle.textContent = `
+    .Name-style {
+      font-size: 16px; 
+      padding: 2px; 
+      text-align: center; 
+      margin-top: -16px; 
+      margin-bottom: -12px;
+    }
+  `;
+  document.head.appendChild(NameTwoStyle);
+  NameTwo.classList.add("Name-style");
+  BoxyTwo.appendChild(NameTwo);
+
+  const NameTwoTexts = document.createElement("h3");
+  const NameTwoTextsStyle = document.createElement("style");
+  NameTwoTexts.textContent = 'Joe Biden';
+  NameTwoTextsStyle.textContent = `
+    .Name-texts-style {
+      font-family: Trebuchet MS, sans-serif; 
+      color: #000000;
+    }
+  `;
+  document.head.appendChild(NameTwoTextsStyle);
+  NameTwoTexts.classList.add("Name-texts-style");
+  NameTwo.appendChild(NameTwoTexts);
+
+  gElement.dataset.modified = "true";
+
+});
+
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+
+//function applyImage(question, gameState) {
+//    const question = e.player_answers[e.player_answers.length - 1];
+//
+//    const allConditionsMet = Object.entries(conditions)
+//        .every(([key, value]) => gameState[key] === value);
+//
+//    if (allConditionsMet) {
+//        for (const [key, value] of Object.entries(effects)) {
+//            gameState[key] = value;
+//        }
+//    }
+//}
+
+//applyImage(AllQuestions[0], gameState);
 
 function AnswerGrabberApplication() {
     const wanser = e.player_answers[e.player_answers.length - 1];
@@ -5737,6 +5922,30 @@ function isQuestionVisible(q, gameState) {
   const conditionsMet = !q.conditions || q.conditions.every(key => gameState[key]);
   return pathMatch && conditionsMet;
 }
+e.player_questions = [];
+
+var extranumberero = e.noCounter;
+var currentQuestionNumber = extranumberero + 1;
+
+function updateQuestionNumber(number) {
+  if (window.dynamicQuestionTextElement) {
+    window.dynamicQuestionTextElement.textContent = `Question ${number} of 31`;
+  }
+}
+
+updateQuestionNumber(currentQuestionNumber);
+
+if (
+  Array.isArray(e.questions_json) &&
+  currentQuestionNumber >= 0 &&
+  currentQuestionNumber < e.questions_json.length
+) {
+  var currentQuestion = e.questions_json[currentQuestionNumber].pk;
+  e.player_questions.push(currentQuestion);
+} else {
+  console.warn("Invalid index:", currentQuestionNumber);
+}
+
 
 e.questions_json = AllQuestions.filter(q => isQuestionVisible(q, gameState));
 
@@ -5744,13 +5953,16 @@ e.answers_json = AllAnswers
 
 campaignTrail_temp.candidate_image_url = "https://i.imgur.com/0AkCCVZ.jpeg";
 campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/Pw7OIKw.png";
-campaignTrail_temp.candidate_last_name = "Obama";
-campaignTrail_temp.running_mate_last_name = "Biden";
 
+var picturewhen = gameState.QuestionPictureHolder
+console.log(campaignTrail_temp)
 cyoAdventure = function(a) {
     ans = e.player_answers[e.player_answers.length-1];
     e.noCounter += 1
-
+    picturewhen = gameState.QuestionPictureHolder
     AnswerGrabberApplication();
     console.log(gameState);
+console.log(campaignTrail_temp)
+
+
 }
