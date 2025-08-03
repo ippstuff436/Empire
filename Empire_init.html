@@ -5,18 +5,18 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 2012,
             "display_year": "Empire",
-            "summary": "obama incumbency",
-            "image_url": "https://i.imgur.com/NAQ3AyL.jpeg",
+            "summary": `hey its the summary!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`,
+            "image_url": "https://i.imgur.com/ydUb3sv.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "an advisor",
-            "recommended_reading": "extra",
+            "recommended_reading": "Not Enabled",
             "has_visits": 0,
             "no_electoral_majority_image": "no majority",
             "creator": "Girlie"
         }
     }
 ]
-
+campaignTrail_temp.election_json[0].fields.recommended_reading = `Whatwhatwhat`
 campaignTrail_temp.candidate_json = [
     {
         "model": "campaign_trail.candidate",
@@ -32,7 +32,7 @@ campaignTrail_temp.candidate_json = [
             "color_hex": "#2121a1ff",
             "secondary_color_hex": "#709ad0ff",
             "is_active": 1,
-            "image_url": "https://www.jetsimon.com/public/static/images/barack-obama-2012.jpg",
+            "image_url": "https://i.imgur.com/Q2fW50h.png",
             "electoral_victory_message": "<h3>Congratulations! You have won the 2012 election.</h3><p>In spite of a hard-fought challenge from Mitt Romney, you have held on to the Presidency.</p><p>On the political front, it appears that your health care legislation that was passed in early 2010 will survive and go into effect. While the economy has not yet recovered as strongly as you hoped and promised, you will now have four more years to leave a strong legacy to your Democratic successor.</p>",
             "electoral_loss_message": "<h3>Sorry! You have lost the 2012 election.</h3><p>In spite of your spirited defense, Mitt Romney has won the Presidency. Nearly two centuries after the ill-fated campaign of Joseph Smith, Romney will become America's first Mormon president.</p><p>On the political front, it appears that Romney will make a push for more tax cuts to revive the economy. He will also try to repeal your health care law. If your defeat was narrow enough, you may be able to attempt a comeback in 2016.</p>",
             "no_electoral_majority_message": "<h3>Sorry! You have lost in a squeaker.</h3><p>No candidate achieved a majority of the electoral votes, marking the first time this has happened since 1824. Unfortunately for you, the majority of U.S. states have Republican controlled congressional delegations, and they will cast their votes for Mitt Romney.</p><p>Given the incredibly close nature of the election, you can probably set your sights on a political comeback in 2016, if that is what you desire.</p>",
@@ -193,7 +193,7 @@ campaignTrail_temp.candidate_json = [
             "color_hex": "#0000FF",
             "secondary_color_hex": "#90C0FF",
             "is_active": 0,
-            "image_url": "https://www.jetsimon.com/public/static/images/joe-biden-2012.jpg",
+            "image_url": "https://i.imgur.com/ynbLnQ2.png",
             "electoral_victory_message": "n/a",
             "electoral_loss_message": "n/a",
             "no_electoral_majority_message": "n/a",
@@ -656,7 +656,6 @@ campaignTrail_temp.temp_election_list = [
 function createMusicBox(playerElementId) {
     const playerContainer = document.getElementById(playerElementId);
 
-    // Create elements
     const musicBox = document.createElement('div');
     musicBox.id = 'music_box';
 
@@ -672,33 +671,31 @@ function createMusicBox(playerElementId) {
     const controls = document.createElement('div');
     controls.id = 'controls';
 
-    // Create span elements for each control using Unicode symbols
     const playPauseBtn = document.createElement('span');
     playPauseBtn.id = 'play_pause_btn';
-    playPauseBtn.innerHTML = '&#9658;'; // ▶ Play symbol
+    playPauseBtn.innerHTML = '&#9658;'; l
     playPauseBtn.style.cursor = 'pointer';
 
     const prevBtn = document.createElement('span');
     prevBtn.id = 'prev_btn';
-    prevBtn.innerHTML = '↞'; // ◀ Previous symbol
+    prevBtn.innerHTML = '↞'; 
     prevBtn.style.cursor = 'pointer';
 
     const nextBtn = document.createElement('span');
     nextBtn.id = 'next_btn';
-    nextBtn.innerHTML = '↠'; // ▶ Next symbol
+    nextBtn.innerHTML = '↠'; 
     nextBtn.style.cursor = 'pointer';
 
     const loopBtn = document.createElement('span');
     loopBtn.id = 'loop_btn';
-    loopBtn.innerHTML = '↻'; // 🔁 Loop symbol
+    loopBtn.innerHTML = '↻'; 
     loopBtn.style.cursor = 'pointer';
 
     const shuffleBtn = document.createElement('span');
     shuffleBtn.id = 'shuffle_btn';
-    shuffleBtn.innerHTML = '⇄'; // 🔀 Shuffle symbol
+    shuffleBtn.innerHTML = '⇄';
     shuffleBtn.style.cursor = 'pointer';
 
-    // Progress and volume controls
     const progressContainer = document.createElement('div');
     progressContainer.id = 'progress_container';
 
@@ -725,7 +722,6 @@ function createMusicBox(playerElementId) {
     volumeSlider.step = 0.01;
     volumeSlider.value = 0.5;
 
-    // Append elements
     progressContainer.append(currentTime, progressBar, duration);
     controls.append(prevBtn, playPauseBtn, nextBtn, loopBtn, shuffleBtn);
     trackListContainer.append(trackList);
@@ -733,7 +729,6 @@ function createMusicBox(playerElementId) {
 
     playerContainer.appendChild(musicBox);
 
-    // Style the music box with a black theme and minimal design
     Object.assign(musicBox.style, {
         padding: '10px',
         border: '1px solid #333',
@@ -768,28 +763,21 @@ function createMusicBox(playerElementId) {
         marginTop: '10px',
     });
 
-    // Music player functionality
     const songs = [
-        { title: 'Now or Never', src: 'https://files.catbox.moe/5asi41.mp3' },
-        //{ title: 'BLOOD.', src: 'https://files.catbox.moe/npyhgp.mp3' },
-        //{ title: 'DNA.', src: 'https://files.catbox.moe/3kq5j7.mp3' },
-        //{ title: 'Moonsickness', src: 'https://files.catbox.moe/2mtlde.mp3' },
-        //{ title: 'Wake Up Sleeper', src: 'https://files.catbox.moe/g3k8k8.mp3' },
+        //{ title: 'Now or Never', src: 'https://files.catbox.moe/5asi41.mp3' },// all of these are ending songs until the release
+        //{ title: 'Watch the Party Die', src: 'https://files.catbox.moe/wnmt92.mp3' },  //  the official soundtrack will just be section.80
+        //{ title: `I'm Better`, src: 'https://files.catbox.moe/7ycwez.mp3' }// maybe a cut-down version of section.80
         //{ title: 'Me Against The World', src: 'https://files.catbox.moe/8828by.mp3' },
-        ////{ title: 'Lose Yourself', src: 'https://files.catbox.moe/6c9qa9.mp3' }, // marked for removal
+        //{ title: 'Lose Yourself', src: 'https://files.catbox.moe/6c9qa9.mp3' }, // marked for removal
         //{ title: 'Jesus Walks', src: 'https://files.catbox.moe/6rwdcb.mp3' },
         //{ title: '6:16 in LA', src: 'https://files.catbox.moe/46xp8j.mp3' },
-        //{ title: 'Fable', src: 'https://files.catbox.moe/kk39fc.mp3' },
-        ////{ title: 'Hey Lover', src: 'https://files.catbox.moe/vqfwdx.mp3' }, // marked for removal
         //{ title: 'Tom\'s Diner', src: 'https://files.catbox.moe/i8d3qi.mp3' },
         //{ title: 'euphoria', src: 'https://files.catbox.moe/jkr5t7.mp3' },
-        ////{ title: 'brutal', src: 'https://files.catbox.moe/lpmbjn.mp3' }, // marked for removal
-        //{ title: 'Black Out Days', src: 'https://files.catbox.moe/g9k1wo.mp3' },
-        //{ title: 'suffering', src: 'https://files.catbox.moe/wwp6q1.mp3' },
-        ////{ title: 'My Dearest Friends', src: 'https://files.catbox.moe/jgqdsu.mp3' }, // marked for transfer (ending)
-        //{ title: 'Dear Arkansas Daughter', src: 'https://files.catbox.moe/hpbbvm.mp3' },
-        //{ title: 'reincarnated', src: 'https://files.catbox.moe/xnaqn7.mp3' } 
+        //{ title: 'reincarnated', src: 'https://files.catbox.moe/xnaqn7.mp3' }
+        { title: 'placeholder', src: '' } 
+
     ];
+
     let currentSongIndex = 0;
     let isPlaying = false;
     let isLooping = false;
@@ -807,8 +795,6 @@ function createMusicBox(playerElementId) {
             item.style.fontWeight = i === index ? 'bold' : 'normal';
         });
     }
-
-    // Populate track list
     songs.forEach((song, index) => {
         const li = document.createElement('li');
         li.textContent = song.title;
@@ -824,13 +810,13 @@ function createMusicBox(playerElementId) {
     function playSong() {
         audio.play();
         isPlaying = true;
-        playPauseBtn.innerHTML = '&#10074;&#10074;'; // Pause (||)
+        playPauseBtn.innerHTML = '&#10074;&#10074;'; 
     }
 
     function pauseSong() {
         audio.pause();
         isPlaying = false;
-        playPauseBtn.innerHTML = '&#9658;'; // Play (▶)
+        playPauseBtn.innerHTML = '&#9658;'; 
     }
 
     playPauseBtn.addEventListener('click', () => {
@@ -893,13 +879,9 @@ function createMusicBox(playerElementId) {
         const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
         return `${mins}:${secs}`;
     }
-
-    // Load the first song initially
     loadSong(currentSongIndex);
     playSong();
 }
-
-// Append the music box to an element with the ID 'player'
 
 createMusicBox('theme_picker');
 
@@ -919,6 +901,28 @@ document.body.background = "https://i.imgur.com/pG2JKWA.jpeg";
 
 document.head.innerHTML += "<style>#results_container {color:#ffffff;} .inner_window_w_desc {background-color:#c8a6a6!important;}</style>";
 
+const observer = new MutationObserver((mutations, obs) => {
+    const ElecDescWin = document.getElementById('election_description_window');
+    if (ElecDescWin && !ElecDescWin.dataset.modified) {
+        ElecDescWin.innerHTML = `
+        <div class="election_description_window_sub" id="election_description_window_sub" style="background-image: url(https://i.imgur.com/ONFT0I9.png), linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); height: 100%;">
+            <div id="election_summary">
+                <p>(AI)It’s January 2009. The financial crisis is deepening, two wars are ongoing, and trust in institutions is crumbling. You are Barack Obama, stepping into the presidency with a mandate for change — but the system you’re inheriting is older and more entrenched than any campaign slogan can shake loose.(/AI)<br><br>(AI)This is not a moment for easy choices. In this scenario, you'll guide the Obama administration through its first term, facing the economic, political, and ideological forces that shaped early 21st-century America. Your decisions won’t just define your presidency — they may determine whether the American project can still hold together at all.(/AI)</p>
+            </div>
+        </div>
+        `;
+        ElecDescWin.dataset.modified = "true";
+    }
+});
+
+
+// Start observing the whole document body for changes in child elements and subtree
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
+
+
 
 
 const Additives = document.createElement("style");
@@ -928,5 +932,36 @@ Additives.textContent = `
   }
 `;
 document.head.appendChild(Additives);
+
+document.querySelectorAll("link[rel*='icon']").forEach(el => el.remove());
+
+const favican = document.createElement("link");
+favican.rel = "icon";
+favican.type = "image/png";
+favican.href = "https://i.imgur.com/S3cISFg.png";
+
+document.head.appendChild(favican);
+
+const IntroText = document.getElementById("inner_window_1");
+const IntroHeading  = IntroText.querySelector("h3");
+const IntroList  = IntroText.querySelector("ul");
+
+
+
+IntroHeading.innerHTML = `Do you have what it takes to save an Empire?`;
+IntroList.style = 'list-style-type: none; padding-left: 0;'
+IntroList.innerHTML = `
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+    <li>Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler. Filler.</li>
+`;
+
+
+
+
 
 //#endcode
