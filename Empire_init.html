@@ -16,7 +16,14 @@ campaignTrail_temp.election_json = [
         }
     }
 ]
-campaignTrail_temp.election_json[0].fields.recommended_reading = `Whatwhatwhat`
+e.WinPopup = "Continue."
+e.LosePopup = "Continue."
+e.HomeStateText = "Strategy:"
+e.PartyText = "Ideology:"
+e.SelAnsContText = "Don't Forget."
+e.SelectText = "Take Legacy."
+e.CandidText = "Your Administration."
+e.VpText = "Review Your Cabinet."
 campaignTrail_temp.candidate_json = [
     {
         "model": "campaign_trail.candidate",
@@ -673,7 +680,7 @@ function createMusicBox(playerElementId) {
 
     const playPauseBtn = document.createElement('span');
     playPauseBtn.id = 'play_pause_btn';
-    playPauseBtn.innerHTML = '&#9658;'; l
+    playPauseBtn.innerHTML = '&#9658;';
     playPauseBtn.style.cursor = 'pointer';
 
     const prevBtn = document.createElement('span');
